@@ -1,0 +1,32 @@
+{
+  "name": "gatsby-plugin-hotjar",
+  "version": "1.0.0",
+  "description": "Gatsby plugin to add Hotjar analytics to your site.",
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "hotjar"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pavloko/gatsby-plugin-hotjar.git"
+  },
+  "author": "Pavlo Kochubei <pavlo.kochubei@hotmail.com> (https://pavlokochubei.com/)",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src --out-dir . --ignore __tests__",
+    "watch": "babel -w src --out-dir . --ignore __tests__",
+    "prepublish": "cross-env NODE_ENV=production npm run build"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "cross-env": "^5.0.5",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.26.0"
+  }
+}
