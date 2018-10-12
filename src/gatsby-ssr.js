@@ -1,7 +1,7 @@
 import React from "react"
 
 exports.onRenderBody = ({ setPostBodyComponents }, pluginOptions) => {
-  if (process.env.NODE_ENV === `production`) {
+  if (process.env.NODE_ENV === "production" || pluginOptions.includeInDevelopment) {
     const {id, sv, host} = pluginOptions
     return setPostBodyComponents([
       <script
