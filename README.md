@@ -19,3 +19,11 @@ plugins: [
   },
 ]
 ```
+
+To find your Hotjar ID, click the **Tracking code** button for your site. The Hotjar Snippet Version is in the tracking code, look for a line like:
+
+```javascript
+h._hjSettings={hjid:[hotjar id],hjsv:6};
+```
+
+The version is the value of `hjsv`.
