@@ -1,8 +1,11 @@
-import React from "react"
+import React from 'react';
 
 exports.onRenderBody = ({ setPostBodyComponents }, pluginOptions) => {
-  if (process.env.NODE_ENV === `production`) {
-    const {id, sv} = pluginOptions
+  if (
+    process.env.NODE_ENV === 'production' ||
+    pluginOptions.includeInDevelopment
+  ) {
+    const { id, sv } = pluginOptions;
     return setPostBodyComponents([
       <script
         key={`gatsby-plugin-hotjar`}
@@ -19,8 +22,8 @@ exports.onRenderBody = ({ setPostBodyComponents }, pluginOptions) => {
           `,
         }}
       />,
-    ])
+    ]);
   }
 
-  return null
-}
+  return null;
+};

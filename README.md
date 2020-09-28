@@ -3,6 +3,7 @@
 Easily add Hotjar Analytics to your Gatsby site.
 
 ## Install
+
 `yarn add gatsby-plugin-hotjar`
 
 ## How to use
@@ -13,11 +14,12 @@ plugins: [
   {
     resolve: `gatsby-plugin-hotjar`,
     options: {
+      includeInDevelopment: true, // optional parameter to include script in development
       id: YOUR_HOTJAR_ID,
-      sv: YOUR_HOTJAR_SNIPPET_VERSION
+      sv: YOUR_HOTJAR_SNIPPET_VERSION,
     },
   },
-]
+];
 ```
 
 To find your Hotjar ID, click the **Tracking code** button for your site. The Hotjar Snippet Version is in the tracking code, look for a line like:
