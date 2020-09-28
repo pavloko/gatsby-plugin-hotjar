@@ -6,6 +6,10 @@ Easily add Hotjar Analytics to your Gatsby site.
 
 `yarn add gatsby-plugin-hotjar`
 
+or
+
+`npm i gatsby-plugin-hotjar --save`
+
 ## How to use
 
 ```javascript
