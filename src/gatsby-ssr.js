@@ -27,7 +27,7 @@ exports.onRenderBody = ({ setPostBodyComponents, setHeadComponents }, pluginOpti
     ];
 
     if (addToHead) {
-        return setHeadComponents(script);
+      return setHeadComponents(script);
     } else {
       return setPostBodyComponents(script);
     }
