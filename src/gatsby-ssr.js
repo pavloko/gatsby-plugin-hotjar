@@ -1,16 +1,18 @@
 import React from 'react';
 
-exports.onRenderBody = ({ setPostBodyComponents }, pluginOptions) => {
+exports.onRenderBody = ({ setPostBodyComponents, setHeadComponents }, pluginOptions) => {
   if (
     process.env.NODE_ENV === 'production' ||
     pluginOptions.includeInDevelopment
   ) {
     const { id, sv } = pluginOptions;
-    return setPostBodyComponents([
+    const addToHead = pluginOptions.addToHead || false;
+
+    const script = [
       <script
-        key={`gatsby-plugin-hotjar`}
-        dangerouslySetInnerHTML={{
-          __html: `
+          key={`gatsby-plugin-hotjar`}
+          dangerouslySetInnerHTML={{
+            __html: `
               (function(h,o,t,j,a,r){
                   h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
                   h._hjSettings={hjid:${id},hjsv:${sv}};
@@ -20,9 +22,15 @@ exports.onRenderBody = ({ setPostBodyComponents }, pluginOptions) => {
                   a.appendChild(r);
               })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=')
           `,
-        }}
+          }}
       />,
-    ]);
+    ];
+
+    if (addToHead) {
+        return setHeadComponents(script);
+    } else {
+      return setPostBodyComponents(script);
+    }
   }
 
   return null;
