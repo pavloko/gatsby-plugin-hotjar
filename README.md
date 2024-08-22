@@ -19,6 +19,7 @@ plugins: [
     resolve: `gatsby-plugin-hotjar`,
     options: {
       includeInDevelopment: true, // optional parameter to include script in development
+      addToHead: false, // optional parameter, if true it will be added to the head instead of the body
       id: YOUR_HOTJAR_ID,
       sv: YOUR_HOTJAR_SNIPPET_VERSION,
     },
