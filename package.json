@@ -17,7 +17,8 @@
   "scripts": {
     "build": "babel src --out-dir . --ignore __tests__",
     "watch": "babel -w src --out-dir . --ignore __tests__",
-    "prepublish": "cross-env NODE_ENV=production npm run build"
+    "prepublish": "cross-env NODE_ENV=production npm run build",
+    "prepare": "npm run prepublish"
   },
   "devDependencies": {
     "babel-cli": "6.26.0",
