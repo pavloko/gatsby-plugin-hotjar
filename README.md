@@ -14,17 +14,19 @@ or
 
 ```javascript
 // In your gatsby-config.js
-plugins: [
-  {
-    resolve: `gatsby-plugin-hotjar`,
-    options: {
-      includeInDevelopment: true, // optional parameter to include script in development
-      addToHead: false, // optional parameter, if true it will be added to the head instead of the body
-      id: YOUR_HOTJAR_ID,
-      sv: YOUR_HOTJAR_SNIPPET_VERSION,
+module.exports = {
+  plugins: [
+    {
+      resolve: "gatsby-plugin-hotjar",
+      options: {
+        includeInDevelopment: true, // optional parameter to include script in development
+        addToHead: false, // optional parameter to append script to the head instead of the body
+        id: YOUR_HOTJAR_ID,
+        sv: YOUR_HOTJAR_SNIPPET_VERSION,
+      },
     },
-  },
-];
+  ],
+};
 ```
 
 To find your Hotjar ID, click the **Tracking code** button for your site. The Hotjar Snippet Version is in the tracking code, look for a line like:
